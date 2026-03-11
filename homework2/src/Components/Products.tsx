@@ -17,9 +17,10 @@ function Products(props)
     return(
         <>
             {
-                Object.entries(products).map( ([phone,price]) => (
-                    <p> {phone}, cijena: {price}, popust: %{props.discount}, cijena s popustom: { popust(price, props.discount) } {props.currency} </p>
-                ) )
+                Object.entries(products).filter( ([phone,price]) => price>=props.minPrice)
+                .map( ([phone,price]) => (
+                    <p> {phone}, {price} </p>
+                ))
             }
         </>
     )
