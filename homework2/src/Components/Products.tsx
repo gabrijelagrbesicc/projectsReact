@@ -18,7 +18,7 @@ function Products(props)
         <>
             {
                 Object.entries(products).map( ([phone,price]) => (
-                    <p> {phone}, cijena: {price}, popust: %{props.discount} cijena s popustom: { popust(price, props.discount) } </p>
+                    <p> {phone}, cijena: {price}, popust: %{props.discount}, cijena s popustom: { popust(price, props.discount) } {props.currency} </p>
                 ) )
             }
         </>

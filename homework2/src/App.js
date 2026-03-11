@@ -4,9 +4,9 @@ import './App.css';
 function App() {
   return (
     <>
-      <Products discount="10"/>
-      <Products discount="20"/>
-      <Products discount="30"/>
+      <Products discount="10" currency="KM"/>
+      <Products discount="20" currency="EUR"/>
+      <Products discount="30" currency="$"/>
     </>
   );
 }
