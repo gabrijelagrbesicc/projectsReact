@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function App() {
+/*function App() {
   const [broj, setBroj] = useState(0);
 
   return (
@@ -15,6 +15,25 @@ function App() {
       <button onClick={() => setBroj(broj - 1)}>
         Smanji
       </button>
+    </div>
+  );
+}*/
+
+function App(){
+  const [ime, setIme] = useState("");
+
+  return(
+    <div>
+      <h1>Unos imena</h1>
+
+      <input type="text"
+      placeholder="Unesi ime"
+      value={ime}
+      onChange={(e) => setIme(e.target.value)}
+      />
+
+      <p>Bok, {ime}</p>
+
     </div>
   );
 }
