@@ -18,7 +18,7 @@ import { useState } from "react";
     </div>
   );
 }*/
-
+/*
 function App(){
   const [ime, setIme] = useState("");
 
@@ -34,6 +34,52 @@ function App(){
 
       <p>Bok, {ime}</p>
 
+    </div>
+  );
+}*/
+
+function App() {
+  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  // dodavanje zadatka
+  const dodajTask = () => {
+    if (task === "") return;
+
+    setTasks([...tasks, task]);
+    setTask("");
+  };
+
+  // brisanje zadatka
+  const obrisiTask = (indexZaBrisanje) => {
+    setTasks(tasks.filter((_, i) => i !== indexZaBrisanje));
+  };
+
+  return (
+    <div>
+      <h1>Todo lista</h1>
+
+      <input
+        type="text"
+        placeholder="Upiši zadatak"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+      />
+
+      <button onClick={dodajTask}>Dodaj</button>
+
+      <ul>
+        {tasks.map((t, index) => (
+          <li key={index}>
+            {t}
+            <button onClick={() => obrisiTask(index)}>
+              Obriši
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <p>Ukupno zadataka: {tasks.length}</p>
     </div>
   );
 }
